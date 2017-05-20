@@ -1,7 +1,7 @@
 {
   "name": "fuet",
   "version": "1.0.0",
-  "description": "Simple and fast Vue 2 template compiler using the reference template compiler. Able to use global namespace or commonjs format.",
+  "description": "Simple and fast template compiler for Vue 2.",
   "bin": {
     "fuet": "./index.js"
   },
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
     "glob": "^7.1.1",
