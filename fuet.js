@@ -133,7 +133,9 @@ if(require.main === module) {
         yargs.detectLocale(false)
         yargs.argv
         const argv = yargs.parsed.argv
+
         let options = {
+            commonjs: argv.commonjs,
             pathfilter: argv.pathfilter,
             namespace: argv.namespace || 'window.templates',
             vue: {
