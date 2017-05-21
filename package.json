@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Simple and fast template compiler for Vue 2.",
   "bin": {
-    "fuet": "./index.js"
+    "fuet": "./fuet.js"
   },
-  "main": "index.js",
+  "main": "fuet.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
+  "repository": "https://github.com/wearespindle/fuet",
   "dependencies": {
     "commander": "^2.9.0",
     "glob": "^7.1.1",
