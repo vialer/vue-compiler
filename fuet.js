@@ -127,6 +127,7 @@ if(require.main === module) {
             type: 'array',
             default: [],
         })
+        .version(() => require('./package').version)
         .help('h')
 
         yargs.demandOption(['i'])
