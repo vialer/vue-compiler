@@ -1,6 +1,6 @@
 {
   "name": "fuet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple and fast template compiler for Vue 2.",
   "bin": {
     "fuet": "./fuet.js"
