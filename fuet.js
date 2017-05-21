@@ -36,13 +36,13 @@ class Fuet {
         if (this.options.commonjs) {
             jsTemplate = `module.exports.${templateName}={r:${this.toFunction(compiled.render)}`
             if (compiled.staticRenderFns.length) {
-                jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]}`
-            } else jsTemplate += '}'
+                jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]};`
+            } else jsTemplate += '};'
         } else {
             jsTemplate = `${this.options.namespace}.${templateName}={r:${this.toFunction(compiled.render)}`
             if (compiled.staticRenderFns.length) {
-                jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]}`
-            } else jsTemplate += '}'
+                jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]};`
+            } else jsTemplate += '};'
         }
         return {data: jsTemplate, name: templateName}
     }
