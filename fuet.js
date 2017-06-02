@@ -31,7 +31,7 @@ class Fuet {
 
     compileTarget(templateData, templateName) {
         let compiled = compiler.compile(templateData, this.options.vue)
-        if (compiled.errors.length) reject(compiled.errors, templateName)
+        if (compiled.errors.length) throw compiled.errors.join(',')
         let jsTemplate = ''
         if (this.options.commonjs) {
             jsTemplate = `module.exports.${templateName}={r:${this.toFunction(compiled.render)}`
@@ -64,7 +64,7 @@ class Fuet {
     writeTemplateData(target, data) {
         return new Promise((resolve, reject) => {
             fs.writeFile(target, data, (err) => {
-                if(err) reject(err)
+                if (err) reject(err)
                 else resolve(data)
             })
         })
