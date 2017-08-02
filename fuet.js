@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const fs = require('fs')
-const os = require('os')
 const path = require('path')
 
 const compiler = require('vue-template-compiler')
@@ -72,7 +71,7 @@ class Fuet {
 
 
     async processFiles(globPattern) {
-        glob(globPattern, {}, async (err, filenames) => {
+        glob(globPattern, {}, async(err, filenames) => {
             let fileReads = filenames.map((filename) => this.readFile(filename))
             let data = ''
             const readFiles = await Promise.all(fileReads)
@@ -94,10 +93,10 @@ class Fuet {
 
 
 // Only called from the cli.
-if(require.main === module) {
+if (require.main === module) {
     let yargs = require('yargs')
         .usage('Usage: $0 [options]')
-        .example(`$0 -i '**/*.vue' -o templates.js`)
+        .example('$0 -i "**/*.vue" -o templates.js')
         .epilog('Devhouse Spindle, https://wearespindle.com')
         .option('commonjs', {
             alias: 'c',
@@ -132,7 +131,6 @@ if(require.main === module) {
 
         yargs.demandOption(['i'])
         yargs.detectLocale(false)
-        yargs.argv
         const argv = yargs.parsed.argv
 
         let options = {
@@ -141,7 +139,7 @@ if(require.main === module) {
             namespace: argv.namespace || 'window.templates',
             vue: {
                 preserveWhitespace: false,
-            }
+            },
         }
         if (argv.output) options.output = argv.output
         const fuet = new Fuet(options)

@@ -1,10 +1,12 @@
 {
-    "ecmaFeatures": {
-        "arrowFunctions":true,
-        "classes":true,
-        "spread":true
+    "parser": "espree",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "modules": true
+        },
+        "ecmaVersion": 8,
+        "sourceType": "module"
     },
-    "parser": "babel-eslint",
     "env": {
         "amd": false,
         "browser": true,
@@ -19,10 +21,11 @@
         "axios": true,
         "csrf": true,
         "Vuelidate": true,
-        "vuexI18n": true,
-        "I18n": true,
+        "i18n": true,
+        "I18nStore": true,
         "translations": true,
-        "__state": true
+        "__state": true,
+        "_Vuex"
     },
     "plugins": [
 
