@@ -131,7 +131,7 @@ if (require.main === module) {
 
         yargs.demandOption(['i'])
         yargs.detectLocale(false)
-        const argv = yargs.parsed.argv
+        const argv = yargs.argv
 
         let options = {
             commonjs: argv.commonjs,
