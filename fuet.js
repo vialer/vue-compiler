@@ -139,6 +139,7 @@ if (require.main === module) {
             namespace: argv.namespace || 'window.templates',
             vue: {
                 preserveWhitespace: false,
+                optimizeSSR: true,
             },
         }
         if (argv.output) options.output = argv.output
