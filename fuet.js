@@ -37,6 +37,11 @@ class Fuet {
             if (compiled.staticRenderFns.length) {
                 jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]};`
             } else jsTemplate += '};'
+        } else if (this.options.es_modules) {
+            jsTemplate = `export const ${templateName}={r:${this.toFunction(compiled.render)}`
+            if (compiled.staticRenderFns.length) {
+                jsTemplate += `,s:[${compiled.staticRenderFns.map(this.toFunction).join(',')}]};`
+            } else jsTemplate += '};'
         } else {
             jsTemplate = `${this.options.namespace}.${templateName}={r:${this.toFunction(compiled.render)}`
             if (compiled.staticRenderFns.length) {
@@ -55,6 +60,8 @@ class Fuet {
                 templateNameParts.push(part)
             }
         }
+        // Filter out double names.
+        templateNameParts = templateNameParts.filter((value, index, self) => self.indexOf(value) === index)
         let templateName = templateNameParts.join('_')
         return templateName
     }
@@ -104,6 +111,12 @@ if (require.main === module) {
             type: 'boolean',
             default: false,
         })
+        .option('es_modules', {
+            alias: 'e',
+            describe: 'use es modules format',
+            type: 'boolean',
+            default: false,
+        })
         .option('input', {
             alias: 'i',
             describe: 'glob to vue templates',
@@ -135,6 +148,7 @@ if (require.main === module) {
 
         let options = {
             commonjs: argv.commonjs,
+            es_modules: argv.es_modules,
             pathfilter: argv.pathfilter,
             namespace: argv.namespace || 'window.templates',
             vue: {
