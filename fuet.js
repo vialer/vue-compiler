@@ -11,6 +11,7 @@ class Fuet {
 
     constructor(options) {
         this.options = options
+
     }
 
 
