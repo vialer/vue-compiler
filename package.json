@@ -13,7 +13,10 @@
   "license": "MIT",
   "repository": "https://github.com/wearespindle/fuet",
   "dependencies": {
+    "convert-source-map": "^1.5.1",
     "glob": "^7.1.1",
+    "hash-sum": "^1.0.2",
+    "source-map": "^0.6.1",
     "vue-template-compiler": "^2.4.4",
     "vue-template-es2015-compiler": "^1.5.3",
     "yargs": "^8.0.2"
