@@ -1,6 +1,6 @@
 {
   "name": "fuet",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Simple and fast template compiler for Vue 2.",
   "bin": {
     "fuet": "./fuet.js"
@@ -17,8 +17,8 @@
     "glob": "^7.1.1",
     "hash-sum": "^1.0.2",
     "source-map": "^0.6.1",
-    "vue-template-compiler": "^2.4.4",
-    "vue-template-es2015-compiler": "^1.5.3",
+    "vue-template-compiler": "^2.5.13",
+    "vue-template-es2015-compiler": "^1.6.0",
     "yargs": "^8.0.2"
   }
 }
