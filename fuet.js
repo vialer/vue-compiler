@@ -11,7 +11,6 @@ class Fuet {
 
     constructor(options) {
         this.options = options
-
     }
 
 
@@ -54,9 +53,9 @@ class Fuet {
 
 
     fileToTemplateName(filename) {
-        let tmpName = filename.replace('../', '').replace(path.extname(filename), '').replace(/\/|-/g, '_')
         let templateNameParts = []
-        for (let part of tmpName.split('_')) {
+        let tmpName = filename.replace(path.extname(filename), '').replace(/-/g, '_')
+        for (let part of tmpName.split('/')) {
             if (!this.options.pathfilter.includes(part)) {
                 templateNameParts.push(part)
             }
