@@ -1,17 +1,17 @@
 {
-  "name": "fuet",
-  "version": "1.0.14",
+  "name": "@vialer/vue-compiler",
+  "version": "1.0.0",
   "description": "Simple and fast template compiler for Vue 2.",
   "bin": {
-    "fuet": "./fuet.js"
+    "vc": "./index.js"
   },
-  "main": "fuet.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Windshaft B.V.",
   "license": "MIT",
-  "repository": "https://github.com/wearespindle/fuet",
+  "repository": "https://github.com/vialer/vue-compiler",
   "dependencies": {
     "convert-source-map": "^1.5.1",
     "glob": "7.1.x",

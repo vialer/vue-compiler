@@ -1,10 +1,10 @@
-# fuet
-Simple and fast Vue 2 template compiler using the reference template compiler.
+# vue-compiler
+Simple and fast Vue 2 template compiler that uses the reference template compiler.
 
 # Usage
-    npm i -g fuet
+    npm i -g @vialer/vue-compiler
     # produces a commonjs module like `module.exports.tabs_TabList`
-    ./fuet.js -i '../tabs/src/*.vue' -s src -c
+    vc -i '../tabs/src/*.vue' -s src -c
 
 # Options
     --namespace, -n  changes the default namespace.                         [text]
@@ -13,6 +13,3 @@ Simple and fast Vue 2 template compiler using the reference template compiler.
     -o, --output     output file to use.                                    [text]
     -s, --skip       skip parts of the template path to name.              [lijst]
     -h               Show help                                           [boolean]
-
-
-Devhouse Spindle, https://wearespindle.com
