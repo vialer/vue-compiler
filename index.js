@@ -7,7 +7,7 @@ const glob = require('glob')
 const transpile = require('vue-template-es2015-compiler')
 
 
-class Fuet {
+class VueCompiler {
 
     constructor(options) {
         this.options = options
@@ -62,6 +62,8 @@ class Fuet {
         }
         // Filter out double names.
         templateNameParts = templateNameParts.filter((value, index, self) => self.indexOf(value) === index)
+        // Filter out @namespace characters.
+        templateNameParts = templateNameParts.filter((value) => !value.includes('@'))
         let templateName = templateNameParts.join('_')
         return templateName
     }
@@ -157,8 +159,8 @@ if (require.main === module) {
             },
         }
         if (argv.output) options.output = argv.output
-        const fuet = new Fuet(options)
-        fuet.processFiles(argv.input)
+        const vueCompiler = new VueCompiler(options)
+        vueCompiler.processFiles(argv.input)
 }
 
-module.exports = Fuet
+module.exports = VueCompiler
